@@ -17,24 +17,55 @@
             text-align: center;
             background: #121212;
             color: white;
+            overflow: hidden;
         }
+
+        .background-images {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: -1;
+            padding-bottom: 20px;
+        }
+
+        .background-images img {
+            max-width: 40%;
+            max-height: 50%;
+            object-fit: contain;
+            opacity: 0.8;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
         .container {
-            background: #1e1e1e;
+            background: rgba(30, 30, 30, 0.8);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
         }
+
         h1 {
             color: #e0e0e0;
         }
+
         p {
             color: #b0b0b0;
             font-size: 18px;
         }
+
         .deadline {
             font-weight: bold;
             color: #d9534f;
         }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -48,9 +79,11 @@
             border-radius: 5px;
             transition: background 0.3s;
         }
+
         .btn:hover {
             background: #0d8ae6;
         }
+
         .btn img {
             width: 20px;
             height: 20px;
@@ -58,13 +91,16 @@
     </style>
 </head>
 <body>
+    <div class="background-images">
+        <img src="appDemo.png" alt="App Demo Image">
+    </div>
     <div class="container">
         <h1>Organize AI - Still Cooking...</h1>
         <p>Yeah, it's not done yet. But don't worry, we're working on it.</p>
         <p>Expected launch: <span class="deadline">April 13, 2025</span>.</p>
         <p>If it's not ready by then,</p>
         <a href="https://x.com/haifishbro209" class="btn">
-            <img src="X_logo_2023_(white).png" alt="X Logo"> Roast me 
+            <img src="X_logo_2023_(white).png" alt="X Logo"> Roast me
         </a>
     </div>
 </body>
