@@ -3,121 +3,1377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Organize AI – Your smart digital assistant for calendar and scheduling.">
-    <meta name="keywords" content="Organize AI, digital assistant, calendar, AI, scheduling">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Organize AI – The smart assistant for your appointments">
-    <meta property="og:description" content="With Organize AI, you'll never miss an appointment again – powered by artificial intelligence.">
-    <meta property="og:url" content="https://organize-ai.eu">
-    
-    <title>Organize AI - Coming Soon</title>
-    <style>
-        :root {
-            --primary-color: #1da1f2;
-            --background-dark: #121212;
-            --text-light: #e0e0e0;
-            --text-muted: #b0b0b0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            padding-left: 5vw;
-            padding-right: 5vw;
+    <title>Organize AI - Your AI-powered Calendar Assistant</title>
+    <link rel="icon" type="image/png" href="icon(64x64)_White.png"
+        media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="icon(64x64)_Black.png"
+        media="(prefers-color-scheme: light)">
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        }
-        
-        .container {
-            max-width: 600px;
-            padding: 30px;
-            background: rgba(30, 30, 30, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-        
-        h1 {
-            color: #e0e0e0;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            color: #b0b0b0;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        .deadline {
-            font-weight: bold;
-            color: #d9534f;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #1da1f2;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .btn:hover {
-            background: #0d8ae6;
-        }
-        
-        .btn img {
-            width: 20px;
-            height: 20px;
-        }
-        
-        img {
-            width: 20px;
-            height: 20px;
-        }
-        
-        .email {
-            margin-top: 25px;
-            font-size: 16px;
-            color: var(--text-light);
-        }
-        
-        .email a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .email a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
+:root {
+    --primary: #4361ee;
+    --primary-hover: #3a56d4;
+    --secondary: #09090b;
+    --background: #030014;
+    --card-bg: #0f0f13;
+    --text: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent: #4cc9f0;
+    --border: #27272a;
+    --glow: rgba(67, 97, 238, 0.5); 
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(circle at 10% 25%, rgba(67, 97, 238, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 85% 75%, rgba(76, 201, 240, 0.1) 0%, transparent 20%);
+        background-attachment: fixed;
+        overflow-x: hidden;
+}
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background-color: rgba(9, 9, 11, 0.8);
+        backdrop-filter: blur(8px);
+        padding: 20px 0;
+    position: fixed;
+    width: 100vw;
+    padding-bottom: auto;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .logo{
+        font-size: 22px;
+    }
+    }
+
+.logo span {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary), #3a56d4);
+    color: var(--text);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    z-index: 1;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:hover {
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
+}
+
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(to bottom, rgba(3, 0, 20, 0.9), rgba(9, 9, 11, 0.95));
+    text-align: center;
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(67, 97, 238, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 70% 60%, rgba(76, 201, 240, 0.15) 0%, transparent 30%);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 54px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ffffff, #4cc9f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(76, 201, 240, 0.3);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-secondary);
+}
+
+.hero-btn {
+    position: relative;
+    margin-top: 20px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.4);
+    z-index: 1;
+}
+
+
+.hero-btn:hover {
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.6);
+    transform: translateY(-3px);
+}
+
+.features {
+    padding: 100px 0;
+    background-color: var(--secondary);
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+    color: var(--text);
+    font-size: 42px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    transition: height 0.5s ease;
+    z-index: -1;
+}
+
+.feature-card:hover::before {
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(67, 97, 238, 0.5));
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+}
+
+.content{
+    /* Using Flexbox */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+
+
+.image-container img:not(:last-child) {
+    margin-right: 200px;
+
+}
+
+.img1 {
+    padding-top: 5px;
+    max-width: 300px; /* Anpassen der Bildgröße */
+    height: auto;
+    border-radius: 15px; /* Ecken abrunden */
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .img1{
+        margin-right: 100;
+    }
+}
+
+@media (max-width: 768px) {
+    .img1{
+        margin-left: 7px; /* Oder einen kleineren Wert, falls du die Bilder nicht direkt an den Rand setzen möchtest */
+    }
+}
+
+
+
+.how-it-works {
+    padding: 100px 0;
+    background-color: var(--background);
+    color: var(--text);
+    position: relative;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.steps::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    z-index: 0;
+}
+
+.step {
+    width: 30%;
+    text-align: center;
+    padding: 40px 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 auto 30px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.5);
+}
+
+.step-number::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(8px);
+}
+
+.step h3 {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.step p {
+    color: var(--text-secondary);
+}
+
+.pricing {
+    padding: 100px 0;
+    background-color: var(--secondary);
+    color: var(--text);
+    position: relative;
+}
+
+.pricing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    width: 320px;
+    padding: 50px 30px;
+    border-radius: 16px;
+    background-color: var(--card-bg);
+    text-align: center;
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pricing-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: height 0.5s ease;
+    z-index: -1;
+}
+
+.pricing-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+.pricing-card:hover::before {
+    height: 100%;
+    opacity: 0.1;
+}
+
+.pricing-card.featured {
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.15), rgba(76, 201, 240, 0.15));
+    border: 1px solid rgba(67, 97, 238, 0.5);
+    position: relative;
+    top: -20px;
+    box-shadow: 0 15px 40px rgba(67, 97, 238, 0.4);
+}
+
+.pricing-card.featured::after {
+    content: "BEST VALUE";
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 10px rgba(67, 97, 238, 0.5);
+}
+
+.pricing-card h3 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: var(--text);
+}
+
+.pricing-card .price {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+}
+
+.pricing-card .price::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.pricing-card .price span {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-card ul li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.pricing-card ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.pricing-card.featured ul li:before {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pricing-btn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pricing-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.pricing-btn:hover::before {
+    left: 0;
+}
+
+.pricing-btn:hover {
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.5);
+    transform: translateY(-2px);
+}
+
+.cta {
+    padding: 150px 0;
+    background: linear-gradient(to bottom, var(--background), rgba(3, 0, 20, 0.95));
+    text-align: center;
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(67, 97, 238, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(76, 201, 240, 0.15) 0%, transparent 30%);
+    z-index: 0;
+}
+
+.cta h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(90deg, #ffffff, #4cc9f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta p {
+    font-size: 20px;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.cta .btn {
+    padding: 18px 40px;
+    font-size: 18px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.cta .btn:hover {
+    box-shadow: 0 20px 40px rgba(67, 97, 238, 0.6);
+    transform: translateY(-3px);
+}
+
+footer {
+    padding: 80px 0 40px;
+    background-color: var(--secondary);
+    color: var(--text);
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width:  45%;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.footer-section ul li a::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent);
+    padding-left: 25px;
+}
+
+.footer-section ul li a:hover::before {
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(67, 97, 238, 0.1);
+    margin-right: 15px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Floating elements for futuristic feel */
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    opacity: 0.1;
+    filter: blur(20px);
+    z-index: -1;
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    bottom: -125px;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+
+
+@keyframes float {
+0% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-30px);
+}
+100% {
+transform: translateY(0);
+}
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+.pricing-cards {
+gap: 20px;
+}
+
+.pricing-card {
+width: 280px;
+}
+
+.steps::before {
+left: 15%;
+right: 15%;
+}
+}
+
+@media (max-width: 768px) {
+.header-content {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.mobile-menu-btn {
+display: block;
+position: absolute;
+right: 20px;
+top: 25px;
+}
+
+nav {
+width: 100%;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.5s ease;
+margin-top: 20px;
+}
+
+nav.active {
+max-height: 300px;
+}
+
+nav ul {
+flex-direction: column;
+}
+
+nav ul li {
+margin-left: 0;
+margin-bottom: 15px;
+}
+
+.hero h1 {
+font-size: 40px;
+}
+
+.feature-card, .step, .footer-section {
+width: 100%;
+}
+
+.steps::before {
+display: none;
+}
+
+.pricing-cards {
+flex-direction: column;
+align-items: center;
+}
+
+.pricing-card {
+width: 100%;
+max-width: 340px;
+}
+
+.pricing-card.featured {
+top: 0;
+margin: 30px 0;
+}
+}
+
+@media (max-width: 480px) {
+.hero h1 {
+font-size: 32px;
+}
+
+.section-title {
+font-size: 32px;
+}
+
+.cta h2 {
+font-size: 36px;
+}
+}
+
+.footer-section h3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.footer-section ul li a::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent);
+    padding-left: 25px;
+}
+
+.footer-section ul li a:hover::before {
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(67, 97, 238, 0.1);
+    margin-right: 15px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Floating elements for futuristic feel */
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    opacity: 0.1;
+    filter: blur(20px);
+    z-index: -1;
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    bottom: -125px;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+
+
+@keyframes float {
+0% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-30px);
+}
+100% {
+transform: translateY(0);
+}
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+.pricing-cards {
+gap: 20px;
+}
+
+.pricing-card {
+width: 280px;
+}
+
+.steps::before {
+left: 15%;
+right: 15%;
+}
+}
+
+@media (max-width: 768px) {
+.header-content {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.mobile-menu-btn {
+display: block;
+position: absolute;
+right: 20px;
+top: 25px;
+}
+
+nav {
+width: 100%;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.5s ease;
+margin-top: 20px;
+}
+
+nav.active {
+max-height: 300px;
+}
+
+nav ul {
+flex-direction: column;
+}
+
+nav ul li {
+margin-left: 0;
+margin-bottom: 15px;
+}
+
+.hero h1 {
+font-size: 40px;
+}
+
+.feature-card, .step, .footer-section {
+width: 100%;
+}
+
+.steps::before {
+display: none;
+}
+
+.pricing-cards {
+flex-direction: column;
+align-items: center;
+}
+
+.pricing-card {
+width: 100%;
+max-width: 340px;
+}
+
+.pricing-card.featured {
+top: 0;
+margin: 30px 0;
+}
+}
+
+@media (max-width: 480px) {
+.hero h1 {
+font-size: 32px;
+}
+
+.section-title {
+font-size: 32px;
+}
+
+.cta h2 {
+font-size: 36px;
+}
+}
+        </style>
+    </head>
 <body>
-    <div class="container">
-        <h1>Organize AI - Still Cooking...</h1>
-        <p>Yeah, it's not done yet. But don't worry, we're working on it.<br>If you want to become a beta tester write us an email</p>
-        <p>Expected launch: <span class="deadline">April 13, 2025</span>.</p>
-        <p>If it's not ready by then,</p>
-        <a href="https://x.com/haifishbro209" class="btn">
-            Roast me on <img src="X_logo_2023_(white).png" alt="X Logo">
-        </a>
-        <p class="email">Contact us: <a href="mailto:organize.ai.eu@gmail.com">organize.ai.eu@gmail.com</a></p>
-    </div>
+    <!-- Floating Shapes -->
+
+ 
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>            <img src="icon_White.png" class="logo" style="height: 2em; width: auto; vertical-align: middle;">
+                </span> Organize AI
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+           <!-- <a href="/login" style="align-self: center;" class="btn">Test Beta</a> -->
+        </div>
+    </header>
+    <div style="height: 15vh;"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Your AI-powered   <br>           <img src="Google-Calendar-Logo.png" class="h1" style="height: 1em; width: 1em;vertical-align: middle;">-Calendar Assistant</h1>
+            <p>Organize AI is your personal AI secretary that helps you plan your day and optimize your Google Calendar - all through natural language commands.            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Smart Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Natural Language Commands in every language </h3>
+                    <p>Simply tell Organize AI what you need in plain language - "Plan a study session for next week" - and it creates a event in your Google-Calendar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3>Google Calendar Integration</h3>
+                    <p>Seamlessly connects with your Google Calendar to analyze your schedule and help you make the most of your time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Scheduling</h3>
+                    <p>Our algorithm uses your Preferences to find the best timeslot or you. <br>- Powered by gpt 4o Technology</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="content">
+            
+        </div>  
+        <div class="container">
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Connect Your Calendar</h3>
+                    <p>Link your Google Calendar account to Organize AI with a few clicks for secure acces to your schedule.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Set-up Preferences</h3>
+                    <p>Tell the AI how you like your day/week to be.<br> e.g : "I like to do Sports in the first half of the day"</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Chat with your calendar</h3>
+                    <p>Let Organize AI create Events and watch as your calendar transforms into an efficient, well-organized system.</p>
+                    
+                </div>
+                <div class="step">
+                    <img src="appDemo.jpg" class="img1" id="img1">
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+   
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>Start Managing Your Time Smarter Today</h2>
+            <p>Join some professionals who have reclaimed their schedules with the power of AI. Try Organize AI <i>beta</i> and experience the difference.</p>
+            <p><i>It's still not deployed if you are reading this but you can write me on <a href="https://x.com/haifishbro209"><img src="x.png" style="height: 1.5em; vertical-align: middle;"></a>. </i></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>As a Google Calendar enthusiast, I was stuck in a planning loop, forcing myself to make decisions every time. It wasn't until I automated my routine that I realized a better way 
+                        existed. I created Organize AI, a website designed to streamline and optimize daily planning processes.
+                        </p>
+                    <div class="social-icons">
+                        <a href="https://x.com/haifishbro209" class="social-icon"><img src="x.png" style="height: 1.5em; vertical-align: middle;"></a>
+                        <a href="https://www.instagram.com/organize.ai?igsh=MXJpY29xdHpxamx4" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+               
+                <div class="footer-section">
+                    <h3 id ='Contact' class="Contact">Contact Us</h3>
+                    <p>Have questions? We're here to help!</p>
+                    <ul>
+                        <li><a href="mailto:organize.ai.eu@gmail.com">organize.ai.eu@gmail.com</a></li>
+                        <li><a href="https://haifishbro209.github.io/organizeAI-Privacy-Policy/">Privacy Policy</a></li>
+                        <li><a href="https://haifishbro209.github.io/organizeAI-terms-of-service/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">
+                    Google Calendar is a trademark of Google LLC. This website is not affiliated with, endorsed by, or sponsored by Google.
+                </p>
+                
+                
+                <p>&copy; 2025 Organize AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+          // Mobile Menu Toggle
+  document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+    document.querySelector('nav').classList.toggle('active');
+});
+
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        document.querySelector('nav').classList.remove('active');
+    });
+});
+
+    </script>
 </body>
 </html>
